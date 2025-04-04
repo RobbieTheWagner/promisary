@@ -2,12 +2,12 @@
   "name": "promisary",
   "version": "1.0.0",
   "description": "A growing collection of utilities to make working with Promises easier and cleaner.",
-  "main": "dist/hash.js",
-  "types": "dist/hash.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/hash.js",
-      "types": "./dist/hash.d.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
