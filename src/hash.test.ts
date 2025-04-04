@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { promiseHash } from './promise-hash';
+import { hash } from './hash';
 
-describe('promiseHash', () => {
+describe('hash', () => {
   it('resolves simple values', async () => {
     const input = { a: 1, b: 2 };
-    const result = await promiseHash(input);
+    const result = await hash(input);
     expect(result).toEqual({ a: 1, b: 2 });
   });
 
@@ -13,7 +13,7 @@ describe('promiseHash', () => {
       a: Promise.resolve(1),
       b: Promise.resolve(2),
     };
-    const result = await promiseHash(input);
+    const result = await hash(input);
     expect(result).toEqual({ a: 1, b: 2 });
   });
 
@@ -22,7 +22,7 @@ describe('promiseHash', () => {
       a: 1,
       b: Promise.resolve(2),
     };
-    const result = await promiseHash(input);
+    const result = await hash(input);
     expect(result).toEqual({ a: 1, b: 2 });
   });
 
@@ -31,11 +31,11 @@ describe('promiseHash', () => {
       a: 1,
       b: Promise.reject(new Error('fail')),
     };
-    await expect(promiseHash(input)).rejects.toThrow('fail');
+    await expect(hash(input)).rejects.toThrow('fail');
   });
 
   it('resolves to empty object for null or undefined', async () => {
-    expect(await promiseHash(null)).toEqual({});
-    expect(await promiseHash(undefined)).toEqual({});
+    expect(await hash(null)).toEqual({});
+    expect(await hash(undefined)).toEqual({});
   });
 });

@@ -1,16 +1,18 @@
-# `promise.hash`
+# `promisely`
 
-[![npm version](https://img.shields.io/npm/v/promise.hash.svg?style=flat)](https://www.npmjs.com/package/promise.hash)
-[![license](https://img.shields.io/npm/l/promise.hash.svg?style=flat)](LICENSE)
-[![tests](https://img.shields.io/github/actions/workflow/status/yourusername/promise.hash/test.yml?branch=main)](https://github.com/yourusername/promise.hash/actions)
+[![npm version](https://img.shields.io/npm/v/promisely.svg?style=flat)](https://www.npmjs.com/package/promisely)
+[![license](https://img.shields.io/npm/l/promisely.svg?style=flat)](LICENSE)
+[![tests](https://img.shields.io/github/actions/workflow/status/RobbieTheWagner/promisely/test.yml?branch=main)](https://github.com/RobbieTheWagner/promisely/actions)
 
-> A tiny utility that resolves an **object of promises** into an **object of resolved values**. Like `Promise.all`, but for objects instead of arrays.
+> A collection of tiny utilities to make working with Promises easier.
 
 ---
 
 ## ✨ What is it?
 
-`promise.hash` takes an object where the values are promises (or normal values) and returns a **single promise** that:
+`promisely` is a growing collection of promise utilities to make async JavaScript easier and cleaner.
+
+The first utility available is `hash`, which takes an object where the values are promises (or normal values) and returns a **single promise** that:
 
 - Resolves to an object with the **same keys**, but with **resolved values**.
 - Rejects immediately if **any** promise rejects.
@@ -18,16 +20,18 @@
 
 It’s like `Promise.all`, but instead of getting an array of results, you get back a **named object**.
 
+**More utilities are planned for future releases!**
+
 ---
 
 ## 📦 Installation
 
 ```bash
-pnpm add promise.hash
+pnpm add promisely
 # or
-npm install promise.hash
+npm install promisely
 # or
-yarn add promise.hash
+yarn add promisely
 ```
 
 ---
@@ -35,10 +39,10 @@ yarn add promise.hash
 ## 🔥 Usage
 
 ```typescript
-import { promiseHash } from 'promise.hash';
+import { hash } from 'promisely';
 
 async function loadData() {
-  const result = await promiseHash({
+  const result = await hash({
     user: fetchUser(),
     posts: fetchPosts(),
   });
@@ -51,7 +55,7 @@ async function loadData() {
 You can mix promises and plain values too:
 
 ```typescript
-const result = await promiseHash({
+const result = await hash({
   a: 1,
   b: Promise.resolve(2),
   c: asyncOperation(),
@@ -59,10 +63,10 @@ const result = await promiseHash({
 console.log(result); // { a: 1, b: 2, c: <resolved value of asyncOperation> }
 ```
 
-If any promise rejects, the whole `promiseHash` will reject immediately:
+If any promise rejects, the whole `hash` will reject immediately:
 
 ```typescript
-await promiseHash({
+await hash({
   a: Promise.reject(new Error('fail')),
   b: Promise.resolve(2),
 });
@@ -88,6 +92,7 @@ Perfect for cleaning up older Ember.js apps or anywhere you want better Promise 
 - Rejects early on failure.
 - Fully typed with TypeScript.
 - Lightweight and fast.
+- More Promise utilities coming soon!
 
 ---
 
