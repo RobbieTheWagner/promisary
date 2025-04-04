@@ -1,6 +1,6 @@
 {
   "name": "promisely",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A collection of tiny utilities to make working with Promises easier.",
   "keywords": [
     "promise",
@@ -25,7 +25,7 @@
     "url": "git+https://github.com/RobbieTheWagner/promisely.git"
   },
   "license": "MIT",
-  "author": "Your Name <you@example.com>",
+  "author": "Robbie Wagner <rwwagner90@gmail.com>",
   "exports": {
     ".": {
       "import": "./dist/hash.js",
