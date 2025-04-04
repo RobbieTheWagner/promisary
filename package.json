@@ -2,12 +2,12 @@
   "name": "promisely",
   "version": "1.0.0",
   "description": "A collection of tiny utilities to make working with Promises easier.",
-  "main": "dist/promise-hash.js",
-  "types": "dist/promise-hash.d.ts",
+  "main": "dist/hash.js",
+  "types": "dist/hash.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/promise-hash.js",
-      "types": "./dist/promise-hash.d.ts"
+      "import": "./dist/hash.js",
+      "types": "./dist/hash.d.ts"
     }
   },
   "files": [
