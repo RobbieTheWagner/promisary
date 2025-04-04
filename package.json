@@ -1,7 +1,27 @@
 {
-  "name": "promisely",
+  "name": "promisary",
   "version": "0.0.0",
-  "description": "A collection of tiny utilities to make working with Promises easier.",
+  "description": "A growing collection of utilities to make working with Promises easier and cleaner.",
+  "main": "dist/hash.js",
+  "types": "dist/hash.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/hash.js",
+      "types": "./dist/hash.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "dev": "vitest watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobbieTheWagner/promisary.git"
+  },
   "keywords": [
     "promise",
     "promises",
@@ -14,34 +34,15 @@
     "rsvp",
     "rsvp.hash",
     "promise all",
-    "async tools"
+    "async tools",
+    "promisary"
   ],
-  "homepage": "https://github.com/RobbieTheWagner/promisely#readme",
-  "bugs": {
-    "url": "https://github.com/RobbieTheWagner/promisely/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RobbieTheWagner/promisely.git"
-  },
+  "author": "RobbieTheWagner",
   "license": "MIT",
-  "author": "Robbie Wagner <rwwagner90@gmail.com>",
-  "exports": {
-    ".": {
-      "import": "./dist/hash.js",
-      "types": "./dist/hash.d.ts"
-    }
+  "bugs": {
+    "url": "https://github.com/RobbieTheWagner/promisary/issues"
   },
-  "main": "dist/hash.js",
-  "types": "dist/hash.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "dev": "vitest watch",
-    "test": "vitest run"
-  },
+  "homepage": "https://github.com/RobbieTheWagner/promisary#readme",
   "devDependencies": {
     "@release-it-plugins/lerna-changelog": "^7.0.0",
     "@types/node": "^20.17.30",
