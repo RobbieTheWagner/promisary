@@ -1,0 +1,30 @@
+{
+  "name": "promise.hash",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.1.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "main": "./dist/promise-hash.js",
+  "types": "./dist/promise-hash.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/promise-hash.js",
+      "types": "./dist/promise-hash.d.ts"
+    }
+  },
+  "sideEffects": false
+}
